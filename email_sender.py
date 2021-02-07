@@ -1,0 +1,1 @@
+import smtplibfrom email.message import EmailMessageemail = EmailMessage()email['from'] = 'Mafe'email['to'] = 'EMAIL'email['subject'] = 'Congrats You!'email.set_content('Super, duper!')with smtplib.SMTP(host='smtp.gmail.com', port='587') as smtp:    smtp.ehlo()    smtp.starttls()    smtp.login('EMAIL', 'PW')    smtp.send_message(email)    print('All done!')
